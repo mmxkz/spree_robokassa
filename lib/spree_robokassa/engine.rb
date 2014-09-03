@@ -22,7 +22,7 @@ module SpreeRobokassa
     end
 
     initializer 'spree_robokassa.action_view_helpers' do
-      ActionView::Base.include ActiveMerchant::Billing::Integrations::ActionViewHelper
+      ActionView::Base.send :include, ActiveMerchant::Billing::Integrations::ActionViewHelper
     end
   end
 end
