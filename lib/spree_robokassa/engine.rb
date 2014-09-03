@@ -21,8 +21,8 @@ module SpreeRobokassa
       app.config.spree.payment_methods << Spree::BillingIntegration::Robokassa
     end
 
-    # initializer 'spree_robokassa.action_view_helpers' do
-    #   ActionView::Base.include ActiveMerchant::Billing::Integrations::ActionViewHelper
-    # end
+    initializer 'spree_robokassa.action_view_helpers' do
+      ActionView::Base.include ActiveMerchant::Billing::Integrations::ActionViewHelper
+    end
   end
 end
