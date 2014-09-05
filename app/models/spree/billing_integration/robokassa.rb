@@ -9,10 +9,9 @@ module Spree
     end
 
     def service_url
-      /production/ =~ environment ?
+      preferred_test_mode ?
         ActiveMerchant::Billing::Integrations::Robokassa.test_url :
-        ActiveMerchant::Billing::Integrations::Robokassa.test_url
-        # ActiveMerchant::Billing::Integrations::Robokassa.production_url
+        ActiveMerchant::Billing::Integrations::Robokassa.production_url
     end
 
     def service_request(id, amount)
