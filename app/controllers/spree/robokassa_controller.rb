@@ -39,8 +39,10 @@ module Spree
     end
 
     def notification
+      req_str = request.query_string
+      req_str = request.raw_post if req_str.empty?
       @notification ||= ActiveMerchant::Billing::Integrations::Robokassa.notification(
-        request.query_string || request.raw_post,
+        req_str,
         secret: payment.payment_method.preferred_password2)
     end
   end
