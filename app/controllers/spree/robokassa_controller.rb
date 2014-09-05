@@ -1,7 +1,7 @@
 module Spree
   class RobokassaController < BaseController
     before_action :set_order
-    before_action :validate_request
+    before_action :validate_request, :only => :result
     skip_before_action :verify_authenticity_token
 
     def result
@@ -10,12 +10,12 @@ module Spree
     end
 
     def success
-      payment.complete
+      #payment.complete
       redirect_to @order, notice: t('robokassa.payment_succeed')
     end
 
     def failure
-      payment.failure
+      #payment.failure
       redirect_to :root, flash: { error: t('robokassa.payment_failed') }
     end
 
