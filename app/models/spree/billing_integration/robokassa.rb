@@ -9,7 +9,7 @@ module Spree
     end
 
     def service_url
-      test_mode ?
+      preferred_test_mode ?
         ActiveMerchant::Billing::Integrations::Robokassa.test_url :
         ActiveMerchant::Billing::Integrations::Robokassa.production_url
     end

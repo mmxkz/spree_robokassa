@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_robokassa'
-  s.version     = '2.3.0'
+  s.version     = '2.3.1'
   s.summary     = 'Robokassa billing integration'
   s.description = 'Robokassa billing integration'
   s.required_ruby_version = '>= 1.9.3'
